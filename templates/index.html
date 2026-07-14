@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PDF Chat Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📄 AI PDF Chat Assistant</h1>
+
+    <p>Upload a PDF and ask questions about its content.</p>
+
+    <div class="card">
+
+        <input type="file" id="pdf" accept=".pdf">
+
+        <button onclick="uploadPDF()">
+            Upload PDF
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <textarea
+            id="question"
+            placeholder="Ask something about the PDF..."
+        ></textarea>
+
+        <button onclick="askQuestion()">
+            Ask AI
+        </button>
+
+    </div>
+
+    <div id="loading"></div>
+
+    <div class="answer-box">
+
+        <h2>Answer</h2>
+
+        <p id="answer">
+            Your answer will appear here...
+        </p>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
